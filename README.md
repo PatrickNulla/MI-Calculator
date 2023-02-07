@@ -7,7 +7,6 @@ To run this project, you will need:
 
   - Python 3.x installed on your local machine
   - The pandas and numpy Python packages installed
-  - A local installation of Excel or equivalent software that can read and write Excel files
 
 ## Setup
 
