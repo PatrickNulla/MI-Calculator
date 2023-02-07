@@ -34,6 +34,7 @@ python MI_Compute.py
 
 ## Customization
 
+For the xlsx file name you could edit this line of code to match what you have: https://github.com/PatrickNulla/MI-Calculator/blob/d27a2500b1e383426c3d49148e6b42454c15acd9/MI_Compute.py#L6  
 If you want to exclude additional projects from the analysis, simply add their names to the filter.json file and re-run the project.
 If you want to add more scope value to the computation, simply add their scope values to the scope.json file and re-run the project.
 
