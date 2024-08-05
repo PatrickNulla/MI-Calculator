@@ -46,11 +46,11 @@ If you want to exclude projects from the computation, simply add their names to 
     "filteredProjects":[
         "FolderName1\\FolderName4\\SolutionName.ProjectName1",
         "FolderName2\\FolderName5\\SolutionName.ProjectName2",
-        "FolderName3\\FolderName6\\SolutionName.ProjectName3"
+        "Api\\Service\\SolutionName.ProjectName.Api (Debug)"
     ]
 }
 ```
-You could obtain this also on the console output of the script in this format: Scope - **ProjectName** : MI (What you want is the ProjectName)  
+You could obtain this also on the console output of the script in this format: Scope - **ProjectName** : MI (What you want is the ProjectName). Including "(environment)" if any.
 ### Scope JSON
 ___
 If you want to add more scope, simply add their scope values to the scope.json file and re-run the project: https://github.com/PatrickNulla/MI-Calculator/blob/23dcc0365beecfd0a73d1fde3576c70fe0bb24c2/scope.json#L1-L7

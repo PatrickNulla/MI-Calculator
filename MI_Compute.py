@@ -13,8 +13,6 @@ with open('scope.json') as f:
 acceptable_scopes = scope['columnScope']
 
 # Filter the dataframe to only include rows where the 'Scope' column equals an acceptable scope
-print(df.loc[4, 'Scope'])
-print(acceptable_scopes)
 df = df[df['Scope'].isin(acceptable_scopes)]
 
 # Filter the dataframe to exclude rows where the 'Project' column contains '.tests'
@@ -26,14 +24,15 @@ df = df[['Scope', 'Project', 'Maintainability Index']]
 # Read the filterOut JSON file into a Python list
 with open('filter.json') as f:
     filter_out = json.load(f)['filteredProjects']
-    filter_out = [p.replace('\\','\\') for p in filter_out]
+    filter_out = [p.replace('\\', '/') for p in filter_out]
+    print(filter_out)
 
 # Filter the dataframe to exclude the projects specified in the filterOut list
+df['Project'] = df['Project'].str.replace('\\', '/')
 df.loc[df['Project'].isin(filter_out), 'Maintainability Index'] = np.nan
 
 # Sort the result dataframe by the index (the project names) in alphabetical order
 df = df.sort_index()
-print(df.columns)
 df.rename(columns={'_2': 'MaintainabilityIndex'}, inplace=True)
 
 # Set the maximum number of rows and columns to display
